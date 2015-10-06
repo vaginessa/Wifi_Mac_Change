@@ -1,0 +1,90 @@
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+
+def buildTime() {
+    def df = new SimpleDateFormat("yyyyMMddkkmmss")
+    df.setTimeZone(TimeZone.getTimeZone("GMT-05:00"))
+    return df.format(new Date())
+}
+
+def versionMajor = "1"
+def versionMinor = "1"
+def versionPatch = "01"
+def versionBuild = "${buildTime()}"
+def versionNameLong = "$versionMajor" + "." + "$versionMinor" + "." + "$versionPatch" + "." + "$versionBuild";
+def PASSWORD = "password"
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId "hom.ourhome.asm301.wifimacchange"
+        minSdkVersion 17
+        targetSdkVersion 23
+        versionCode 1
+        versionName "$versionNameLong";
+    }
+    signingConfigs {
+        release {
+            storeFile file('Z:/AndroidStudioProjects/keystore/my-release-key.keystore')
+            storePassword "$PASSWORD"
+            keyAlias "alias_name"
+            keyPassword "$PASSWORD"
+        }
+        debug {
+            storeFile file('Z:/AndroidStudioProjects/keystore/my-release-key.keystore')
+            storePassword "$PASSWORD"
+            keyAlias "alias_name"
+            keyPassword "$PASSWORD"
+        }
+    }
+    buildTypes {
+        release {
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            zipAlignEnabled true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            debuggable true
+            jniDebuggable true
+            renderscriptDebuggable true
+            zipAlignEnabled true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+    productFlavors {
+        Free {
+            //versionName "$versionNameLong" + "-" + "Free";
+        }
+        Pro {
+            //versionName "$versionNameLong" + "-" + "Pro";
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def OrigApkName = project.name + "-" + variant.flavorName + "-" + variant.buildType.name + ".apk"
+            def NewApkName = "Wifi_Mac_Change" + "-" + variant.flavorName + "-v" + defaultConfig.versionName + "-" + variant.buildType.name.toUpperCase() + ".apk"
+            output.outputFile = new File(
+                    output.outputFile.parent, output.outputFile.name.replace(
+                    "$OrigApkName",
+                    "$NewApkName"))
+        }
+    }
+}
+dependencies {
+    //compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':RootShell')
+    compile project(':RootTools')
+    //compile files('../RootShell/build/intermediates/bundles/release/classes.jar')
+    //compile files('../RootTools/build/intermediates/bundles/release/classes.jar')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+
+}
