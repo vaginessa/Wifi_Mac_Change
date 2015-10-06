@@ -1,6 +1,13 @@
 # Wifi_Mac_Change
 Wifi Mac Change for Android
 
+I made this so I could change my wifi mac address.
+This works on my Galaxy Avant and Galaxy Light.
+I am told this works on other devices also but I cannot verify those claims.
+Wifi Mac Change for Android has NO WARANTY written or expressed.
+If you paid for this Source Code or Application get a refund because you didn't pay me.
+asm301
+
 Android Studio 1.4
 Gradle 2.4
 compileSdkVersion 23
