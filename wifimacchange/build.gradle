@@ -33,7 +33,7 @@ android {
             keyPassword "$PASSWORD"
         }
         debug {
-            storeFile file('Z:/AndroidStudioProjects/keystore/my-release-key.keystore')
+            storeFile file('Z:/AndroidStudioProjects/keystore/my-debug-key.keystore')
             storePassword "$PASSWORD"
             keyAlias "alias_name"
             keyPassword "$PASSWORD"
@@ -82,8 +82,6 @@ dependencies {
     //compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':RootShell')
     compile project(':RootTools')
-    //compile files('../RootShell/build/intermediates/bundles/release/classes.jar')
-    //compile files('../RootTools/build/intermediates/bundles/release/classes.jar')
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
 
