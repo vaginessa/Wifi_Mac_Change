@@ -2,7 +2,7 @@
 Wifi Mac Change for Android
 
 I made this so I could change my wifi mac address.
-This works on my Galaxy Avant and Galaxy Light.
+This works on my Galaxy Avant and Galaxy Light with "Chainfire SuperSU" and "Stericson Busybox" installed.
 I am told this works on other devices also but I cannot verify those claims.
 Wifi Mac Change for Android has NO WARANTY written or expressed.
 If you paid for this Source Code or Application get a refund because you didn't pay me.
