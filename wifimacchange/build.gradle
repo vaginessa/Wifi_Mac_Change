@@ -27,13 +27,13 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('Z:/AndroidStudioProjects/keystore/my-release-key.keystore')
+            storeFile file('Z:/AndroidStudioProjects/keystore/asm301-key.keystore')
             storePassword "$PASSWORD"
             keyAlias "alias_name"
             keyPassword "$PASSWORD"
         }
         debug {
-            storeFile file('Z:/AndroidStudioProjects/keystore/my-debug-key.keystore')
+            storeFile file('Z:/AndroidStudioProjects/keystore/asm301-key.keystore')
             storePassword "$PASSWORD"
             keyAlias "alias_name"
             keyPassword "$PASSWORD"
@@ -84,5 +84,4 @@ dependencies {
     compile project(':RootTools')
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
-
 }

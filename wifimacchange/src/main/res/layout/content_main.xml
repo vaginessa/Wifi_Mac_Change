@@ -23,9 +23,8 @@
 
     <ScrollView
         android:id="@+id/scroll"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@id/textView"
@@ -94,15 +93,17 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:text="@string/ExitButton" />
-
-            <TextView
-                android:id="@+id/versionName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/versionName"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textStyle="bold" />
         </TableLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/versionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/versionName"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
 </RelativeLayout>

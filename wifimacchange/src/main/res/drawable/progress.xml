@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!-- 
+<?xml version="1.0" encoding="utf-8"?><!--
     Duration = 1 means that one rotation will be done in 1 second. leave it.
     If you want to speed up the rotation, increase duration value. 
     in example 1080 shows three times faster revolution. 
@@ -12,7 +10,6 @@
     android:pivotX="50%"
     android:pivotY="50%"
     android:toDegrees="360">
-
     <shape
         android:innerRadiusRatio="3"
         android:shape="ring"
@@ -21,7 +18,6 @@
         <size
             android:width="48dip"
             android:height="48dip" />
-
         <gradient
             android:centerColor="@android:color/background_light"
             android:centerY="0.50"
@@ -30,5 +26,4 @@
             android:type="sweep"
             android:useLevel="false" />
     </shape>
-
 </rotate>

@@ -47,11 +47,9 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 //RootTools debugMode
         RootTools.debugMode = true;
 //RootTools debugMode
-
 // Call su on app open Start
         final Runtime runtime = Runtime.getRuntime();
         try {
@@ -64,7 +62,6 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
 // Call su on app open End
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -92,17 +89,13 @@ public class MainActivity extends AppCompatActivity
                 System.exit(0);
             }
         });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
 // Exit Button START
         Button ExitButton = (Button) this.findViewById(R.id.ExitButton);
         ExitButton.setOnClickListener(
@@ -114,8 +107,7 @@ public class MainActivity extends AppCompatActivity
                 }
         );
 // Exit Button END
-
-        // Wifi Switch START
+// Wifi Switch START
         Switch toggle_wifi = (Switch) findViewById(R.id.wifi_switch);
         toggle_wifi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -127,7 +119,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 // Wifi Switch END
-
 // Bluetooth Switch START
         Switch toggle_bluetooth = (Switch) findViewById(R.id.bluetooth_switch);
         toggle_bluetooth.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -140,7 +131,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 // Bluetooth Switch END
-
 // Version Name START
         PackageInfo pInfo = null;
         try {
@@ -177,12 +167,10 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -204,14 +192,12 @@ public class MainActivity extends AppCompatActivity
             } else {
                 makeToast("Root access has not been granted!");
             }
-
         } else if (id == R.id.isBusyboxAvailable) {
             if (RootTools.isBusyboxAvailable()) {
                 makeToast("BusyBox is available!");
             } else {
                 makeToast("BusyBox is not available!");
             }
-
         } else if (id == R.id.offerBusyBox) {
             RootTools.offerBusyBox(MainActivity.this);
         } else if (id == R.id.offerSuperUser) {
@@ -228,7 +214,6 @@ public class MainActivity extends AppCompatActivity
             }
         }
 // Tools END
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -280,9 +265,9 @@ public class MainActivity extends AppCompatActivity
         RootTools.getShell(true).add(copyFileToSystemCommand);
         RootTools.remount("/system", "ro");
     }
-// Copy Assets END
 
-    // Wifi Switch START
+    // Copy Assets END
+// Wifi Switch START
     public void toggleWifi(boolean status) {
         WifiManager wifiManager = (WifiManager) this
                 .getSystemService(Context.WIFI_SERVICE);
@@ -296,8 +281,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     // Wifi Switch END
-
-    // Bluetooth Switch START
+// Bluetooth Switch START
     public void toggleBluetooth(boolean status) {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (status == true && !mBluetoothAdapter.isEnabled()) {
@@ -308,9 +292,9 @@ public class MainActivity extends AppCompatActivity
             makeToast("Bluetooth Disabled!");
         }
     }
-// Bluetooth Switch END
 
-    // Install To System Command START
+    // Bluetooth Switch END
+// Install To System Command START
     private void InstallToSystemCommand() throws TimeoutException, RootDeniedException, IOException {
         RootTools.remount("/system", "rw");
         copyFileToSystem(Environment.getDataDirectory().getPath() + "/app/hom.ourhome.asm301.wifimacchange-*.apk", "/system/priv-app/WifiMacChange.apk", "0644");
@@ -320,9 +304,9 @@ public class MainActivity extends AppCompatActivity
                 "/system/bin/reboot");
         RootTools.getShell(true).add(InstallToSystemCommand);
     }
-    // Install To System Command END
 
-    // Uninstall From System Command START
+    // Install To System Command END
+// Uninstall From System Command START
     private void UninstallFromSystemCommand() throws TimeoutException, RootDeniedException, IOException {
         RootTools.remount("/system", "rw");
         Command UninstallFromSystemCommand = new Command(0,
@@ -335,9 +319,9 @@ public class MainActivity extends AppCompatActivity
         RootTools.getShell(true).add(UninstallFromSystemCommand);
         RootTools.remount("/system", "ro");
     }
-    // Uninstall From System Command END
 
-    // Toast Messages START
+    // Uninstall From System Command END
+// Toast Messages START
     public void makeToast(String msg) {
         Context context = getApplicationContext();
         CharSequence text = msg;

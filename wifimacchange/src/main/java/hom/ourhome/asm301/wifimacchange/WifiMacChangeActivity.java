@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class WifiMacChangeActivity extends AsyncTask<String, String, String> {
-
     Context mContext = null;
     ProgressDialog progressdailog;
 
