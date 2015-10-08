@@ -31,33 +31,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62a5cc67-056e-4453-8354-d0a1ca648fa3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clean_and_Git.cmd" afterPath="$PROJECT_DIR$/Clean_and_Git.cmd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/java/hom/ourhome/asm301/wifimacchange/MainActivity.java" afterPath="$PROJECT_DIR$/wifimacchange/src/main/java/hom/ourhome/asm301/wifimacchange/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RootShell/RootShell.iml" afterPath="$PROJECT_DIR$/RootShell/RootShell.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RootTools/RootTools.iml" afterPath="$PROJECT_DIR$/RootTools/RootTools.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/java/hom/ourhome/asm301/wifimacchange/WifiMacChangeActivity.java" afterPath="$PROJECT_DIR$/wifimacchange/src/main/java/hom/ourhome/asm301/wifimacchange/WifiMacChangeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/menu/activity_main_drawer.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/menu/activity_main_drawer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/layout/app_bar_main.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/layout/app_bar_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/build.gradle" afterPath="$PROJECT_DIR$/wifimacchange/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/layout/content_main.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/layout/content_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/values-w820dp/dimens.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/values-w820dp/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/menu/main.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/menu/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/menu/menu_main.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/menu/menu_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/layout/nav_header_main.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/layout/nav_header_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/drawable/progress.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/drawable/progress.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/proguard-rules.pro" afterPath="$PROJECT_DIR$/wifimacchange/proguard-rules.pro" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/values/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/src/main/res/values-v21/styles.xml" afterPath="$PROJECT_DIR$/wifimacchange/src/main/res/values-v21/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wifimacchange/wifimacchange.iml" afterPath="$PROJECT_DIR$/wifimacchange/wifimacchange.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="62a5cc67-056e-4453-8354-d0a1ca648fa3" name="Default" comment="" />
     <ignored path="Wifi_Mac_Change.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -4723,7 +4697,7 @@
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5030211" order="7" side_tool="true" content_ui="tabs" />
@@ -4734,7 +4708,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.4864407" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.4864407" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
