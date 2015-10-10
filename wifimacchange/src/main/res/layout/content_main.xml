@@ -58,6 +58,14 @@
                 android:text="@string/ClickHere" />
 
             <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textSize="25sp" />
+
+            <TextView
                 android:id="@+id/result"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -86,13 +94,13 @@
                 android:textOff="OFF"
                 android:textOn="ON" />
 
-            <Button
+            <!-- <Button
                 android:id="@+id/ExitButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:text="@string/ExitButton" />
+                android:text="@string/ExitButton" /> -->
         </TableLayout>
     </ScrollView>
 

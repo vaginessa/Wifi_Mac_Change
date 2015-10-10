@@ -4,7 +4,7 @@ rmdir /S build /Q
 rmdir /S RootShell\build /Q
 rmdir /S RootTools\build /Q
 rmdir /S wifimacchange\build /Q
-del *.apk /Q
+del *.apk
 call gradle clean
 rmdir /S .gradle /Q
 rmdir /S gradle /Q

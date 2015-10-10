@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -20,7 +21,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -36,6 +36,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 public class MainActivity extends AppCompatActivity
@@ -45,11 +46,16 @@ public class MainActivity extends AppCompatActivity
     String command;
     EditText input;
 
+    // Timer START
+    TextView textViewTime;
+// Timer END
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 //RootTools debugMode
         RootTools.debugMode = true;
 //RootTools debugMode
+
 // Call su on app open Start
         final Runtime runtime = Runtime.getRuntime();
         try {
@@ -62,10 +68,18 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
 // Call su on app open End
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+// Timer START
+        textViewTime = (TextView) findViewById(R.id.textViewTime);
+        textViewTime.setText("00:60:00");
+        final CounterClass timer = new CounterClass(3600000, 1000);
+// Timer END
+
         btnExecute = (ImageButton) findViewById(R.id.btn);
         txtResult = (TextView) findViewById(R.id.result);
         btnExecute.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +91,9 @@ public class MainActivity extends AppCompatActivity
                 toggleWifi(true);
                 new WifiMacChangeActivity(MainActivity.this).execute(command);
                 // new getOutput().execute(command);
+                // Timer START
+                timer.start();
+                // Timer END
             }
         });
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -96,17 +113,19 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-// Exit Button START
-        Button ExitButton = (Button) this.findViewById(R.id.ExitButton);
-        ExitButton.setOnClickListener(
-                new View.OnClickListener() {
-                    public void onClick(View v) {
-                        finish();
-                        System.exit(0);
-                    }
-                }
-        );
-// Exit Button END
+/**
+ // Exit Button START
+ Button ExitButton = (Button) this.findViewById(R.id.ExitButton);
+ ExitButton.setOnClickListener(
+ new View.OnClickListener() {
+ public void onClick(View v) {
+ finish();
+ System.exit(0);
+ }
+ }
+ );
+ // Exit Button END
+ **/
 // Wifi Switch START
         Switch toggle_wifi = (Switch) findViewById(R.id.wifi_switch);
         toggle_wifi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -119,6 +138,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 // Wifi Switch END
+
 // Bluetooth Switch START
         Switch toggle_bluetooth = (Switch) findViewById(R.id.bluetooth_switch);
         toggle_bluetooth.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -131,6 +151,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 // Bluetooth Switch END
+
 // Version Name START
         PackageInfo pInfo = null;
         try {
@@ -179,6 +200,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
 // Tools START
         if (id == R.id.isRootAvailable) {
             if (RootTools.isRootAvailable()) {
@@ -265,9 +287,9 @@ public class MainActivity extends AppCompatActivity
         RootTools.getShell(true).add(copyFileToSystemCommand);
         RootTools.remount("/system", "ro");
     }
+// Copy Assets END
 
-    // Copy Assets END
-// Wifi Switch START
+    // Wifi Switch START
     public void toggleWifi(boolean status) {
         WifiManager wifiManager = (WifiManager) this
                 .getSystemService(Context.WIFI_SERVICE);
@@ -280,8 +302,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    // Wifi Switch END
-// Bluetooth Switch START
+// Wifi Switch END
+
+    // Bluetooth Switch START
     public void toggleBluetooth(boolean status) {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (status == true && !mBluetoothAdapter.isEnabled()) {
@@ -292,9 +315,9 @@ public class MainActivity extends AppCompatActivity
             makeToast("Bluetooth Disabled!");
         }
     }
+// Bluetooth Switch END
 
-    // Bluetooth Switch END
-// Install To System Command START
+    // Install To System Command START
     private void InstallToSystemCommand() throws TimeoutException, RootDeniedException, IOException {
         RootTools.remount("/system", "rw");
         copyFileToSystem(Environment.getDataDirectory().getPath() + "/app/hom.ourhome.asm301.wifimacchange-*.apk", "/system/priv-app/WifiMacChange.apk", "0644");
@@ -319,9 +342,9 @@ public class MainActivity extends AppCompatActivity
         RootTools.getShell(true).add(UninstallFromSystemCommand);
         RootTools.remount("/system", "ro");
     }
+// Uninstall From System Command END
 
-    // Uninstall From System Command END
-// Toast Messages START
+    // Toast Messages START
     public void makeToast(String msg) {
         Context context = getApplicationContext();
         CharSequence text = msg;
@@ -330,4 +353,33 @@ public class MainActivity extends AppCompatActivity
         toast.show();
     }
 // Toast Messages END
+
+    // Timer START
+    public class CounterClass extends CountDownTimer {
+
+        public CounterClass(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);
+            // TODO Auto-generated constructor stub
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+            // TODO Auto-generated method stub
+
+            long millis = millisUntilFinished;
+            String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis),
+                    TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)),
+                    TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+            System.out.println(hms);
+            textViewTime.setText(hms);
+        }
+
+        @Override
+        public void onFinish() {
+            // TODO Auto-generated method stub
+            textViewTime.setText("Completed.");
+        }
+    }
+// Timer END
+
 }
