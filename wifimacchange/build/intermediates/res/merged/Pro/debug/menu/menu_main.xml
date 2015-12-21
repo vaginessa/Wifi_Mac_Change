@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/isRootAvailable" android:orderInCategory="101"
+        android:title="@string/isRootAvailable" app:showAsAction="never" />
+    <item android:id="@+id/isAccessGiven" android:orderInCategory="102"
+        android:title="@string/isAccessGiven" app:showAsAction="never" />
+    <item android:id="@+id/isBusyboxAvailable" android:orderInCategory="103"
+        android:title="@string/isBusyboxAvailable" app:showAsAction="never" />
+    <item android:id="@+id/offerBusyBox" android:orderInCategory="104"
+        android:title="@string/offerBusyBox" app:showAsAction="never" />
+    <item android:id="@+id/action_settings" android:orderInCategory="998"
+        android:title="@string/action_settings" app:showAsAction="never" />
+    <item android:id="@+id/ExitButton" android:orderInCategory="999"
+        android:title="@string/ExitButton" app:showAsAction="never" />
+</menu>

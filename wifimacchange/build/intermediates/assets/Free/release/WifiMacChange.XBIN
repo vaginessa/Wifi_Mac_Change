@@ -1,0 +1,23 @@
+#!/system/bin/sh
+
+echo "Shutdown the wlan0 adapter: DONE"
+busybox ifconfig wlan0 down
+sleep 3
+WIFI_MAC=`(date; cat /proc/interrupts) | md5sum | sed -r 's/^(.{10}).*$/\1/; s/([0-9a-f]{2})/\1:/g; s/:$//;'`
+echo "00:${WIFI_MAC}" > /efs/wifi/.mac.cob
+echo "00:${WIFI_MAC}" > /efs/wifi/.mac.info
+sleep 3
+echo "Reconfigureing the wlan0 adapter: DONE"
+echo "New Wifi mac address is 00:${WIFI_MAC}"
+busybox ifconfig wlan0 hw ether "00:${WIFI_MAC}"
+sleep 3
+echo "Starting the wlan0 adapter: DONE"
+busybox ifconfig wlan0 up
+echo "Verify settings: OK"
+sleep 2
+BLUETOOTH_MAC=`(date; cat /proc/interrupts) | md5sum | sed -r 's/^(.{10}).*$/\1/; s/([0-9a-f]{2})/\1:/g; s/:$//;'`
+echo "00:${BLUETOOTH_MAC}" > /efs/bluetooth/bt_addr
+echo "New Bluetooth mac address is 00:${BLUETOOTH_MAC}"
+sleep 2
+echo "Finished"
+exit

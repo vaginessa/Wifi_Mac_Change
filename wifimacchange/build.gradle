@@ -17,7 +17,7 @@ def PASSWORD = "password"
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId "hom.ourhome.asm301.wifimacchange"
         minSdkVersion 17
@@ -27,13 +27,13 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('Z:/AndroidStudioProjects/keystore/asm301-key.keystore')
+            storeFile file('C:\\Users\\asm301\\StudioProjects\\asm301-key.keystore')
             storePassword "$PASSWORD"
             keyAlias "alias_name"
             keyPassword "$PASSWORD"
         }
         debug {
-            storeFile file('Z:/AndroidStudioProjects/keystore/asm301-key.keystore')
+            storeFile file('C:\\Users\\asm301\\StudioProjects\\asm301-key.keystore')
             storePassword "$PASSWORD"
             keyAlias "alias_name"
             keyPassword "$PASSWORD"
@@ -82,6 +82,6 @@ dependencies {
     //compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':RootShell')
     compile project(':RootTools')
-    compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.android.support:design:23.0.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
 }
