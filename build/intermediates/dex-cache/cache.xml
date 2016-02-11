@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\exploded-aar\Wifi_Mac_Change\RootTools\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e99b5c0f2bd0781edf29656151628304f9fc0042">
+        <dex dex="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\pre-dexed\Free\debug\Wifi_Mac_Change-RootTools-unspecified_917def704058c06b37d0428575aea13fe3d99a45.jar" />
+    </item>
+    <item
+        jar="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\exploded-aar\Wifi_Mac_Change\RootShell\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5d2ac07933b6659d2c6278df699ab4677ba72404">
+        <dex dex="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\pre-dexed\Free\debug\Wifi_Mac_Change-RootShell-unspecified_c0d599646cbb22d06169783ac743465c49cd5bbf.jar" />
+    </item>
+
+</items>
