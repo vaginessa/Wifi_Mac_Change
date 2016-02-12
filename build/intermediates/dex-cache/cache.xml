@@ -1,3 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\pre-dexed\Pro\debug\com.android.support-support-v4-23.1.1_a3ec000f96df85ad716e98140ed02ea2f2bab3b3.jar" />
+    </item>
+    <item
+        jar="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\pre-dexed\Pro\debug\com.android.support-appcompat-v7-23.1.1_7c79e46349f5a27b49ada8e2b61788cba260f746.jar" />
+    </item>
+    <item
+        jar="C:\Users\asm301\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\pre-dexed\Pro\debug\support-annotations-23.1.1_5c4d8fea0211abcefee72af96294053296c6aee8.jar" />
+    </item>
+    <item
+        jar="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\pre-dexed\Pro\debug\com.android.support-design-23.1.1_c360f43b47f99346b2c68c34903a7046e4dd753f.jar" />
+    </item>
+    <item
+        jar="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\exploded-aar\Wifi_Mac_Change\RootTools\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0f93c0c0307a90926c8bf5d48caf59a1fd43c1cf">
+        <dex dex="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\pre-dexed\Pro\debug\Wifi_Mac_Change-RootTools-unspecified_917def704058c06b37d0428575aea13fe3d99a45.jar" />
+    </item>
+    <item
+        jar="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\pre-dexed\Pro\debug\internal_impl-23.1.1_2c545b6c56a696f296044ea607c6223f0dd117bd.jar" />
+    </item>
+    <item
+        jar="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\exploded-aar\Wifi_Mac_Change\RootShell\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8f8247f29654978521a20cbd6de8fe6557d17439">
+        <dex dex="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\pre-dexed\Pro\debug\Wifi_Mac_Change-RootShell-unspecified_c0d599646cbb22d06169783ac743465c49cd5bbf.jar" />
+    </item>
+    <item
+        jar="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\asm301\StudioProjects\Wifi_Mac_Change\wifimacchange\build\intermediates\pre-dexed\Pro\debug\com.android.support-recyclerview-v7-23.1.1_48cf6c1475699eae830fbe7079f84c6c516c91cf.jar" />
+    </item>
+
+</items>
