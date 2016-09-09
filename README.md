@@ -8,14 +8,14 @@ Wifi Mac Change for Android has NO WARANTY written or expressed.
 If you paid for this Source Code or Application get a refund because you didn't pay me.
 asm301
 
-Android Studio 1.5.1
-Gradle 2.8
-compileSdkVersion 23
+Android Studio 2.1.3
+Gradle 2.14.1
+compileSdkVersion 24
 minSdkVersion 17
-buildToolsVersion "23.0.2"
+buildToolsVersion "24.0.2"
 
 
-
+Wifi Mac Change for Android can be found at https://github.com/asm301/Wifi_Mac_Change
 RootShell and RootTools belong to someone else https://github.com/Stericson
 You can find the latest release here: https://github.com/Stericson/RootShell/releases
 You can find more information at our wiki: https://github.com/Stericson/RootShell/wiki
