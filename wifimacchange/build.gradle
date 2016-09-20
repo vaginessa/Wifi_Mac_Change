@@ -27,13 +27,13 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('C:\\Users\\asm301\\StudioProjects\\asm301-key.keystore')
+            storeFile file('/home/asm301/Android/asm301-key.keystore')
             storePassword "$PASSWORD"
             keyAlias "alias_name"
             keyPassword "$PASSWORD"
         }
         debug {
-            storeFile file('C:\\Users\\asm301\\StudioProjects\\asm301-key.keystore')
+            storeFile file('/home/asm301/Android/asm301-key.keystore')
             storePassword "$PASSWORD"
             keyAlias "alias_name"
             keyPassword "$PASSWORD"
