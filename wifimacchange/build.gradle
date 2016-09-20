@@ -61,10 +61,10 @@ android {
     }
     productFlavors {
         Free {
-            //versionName "$versionNameLong" + "-" + "Free";
+            versionName "$versionNameLong" + "-" + "Free";
         }
         Pro {
-            //versionName "$versionNameLong" + "-" + "Pro";
+            versionName "$versionNameLong" + "-" + "Pro";
         }
     }
     applicationVariants.all { variant ->
@@ -82,6 +82,6 @@ dependencies {
     //compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':RootShell')
     compile project(':RootTools')
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.android.support:design:24.2.0'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
 }

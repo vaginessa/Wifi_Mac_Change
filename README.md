@@ -8,7 +8,7 @@ Wifi Mac Change for Android has NO WARRANTY written or expressed.
 If you paid for this Source Code or Application get a refund because you didn't pay me.
 asm301
 
-Android Studio 2.1.3
+Android Studio 2.2
 Gradle 2.14.1
 compileSdkVersion 24
 minSdkVersion 17
