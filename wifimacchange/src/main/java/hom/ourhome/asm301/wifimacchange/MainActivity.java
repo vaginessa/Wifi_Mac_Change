@@ -28,9 +28,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.stericson.RootShell.exceptions.RootDeniedException;
-import com.stericson.RootShell.execution.Command;
-import com.stericson.RootTools.RootTools;
+import com.stericson.rootshell.exceptions.RootDeniedException;
+import com.stericson.rootshell.execution.Command;
+import com.stericson.roottools.RootTools;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

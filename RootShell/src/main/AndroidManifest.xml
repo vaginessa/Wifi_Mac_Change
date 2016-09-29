@@ -1,1 +1,5 @@
-<manifest package="com.stericson.RootShell"></manifest>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.stericson.rootshell">
+
+
+</manifest>
