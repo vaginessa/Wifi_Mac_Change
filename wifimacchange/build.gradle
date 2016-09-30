@@ -17,7 +17,7 @@ def PASSWORD = "password"
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '24.0.2'
+    buildToolsVersion '24.0.3'
     defaultConfig {
         applicationId "hom.ourhome.asm301.wifimacchange"
         minSdkVersion 17
@@ -80,7 +80,6 @@ android {
 }
 dependencies {
     //compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':RootShell')
     compile project(':RootTools')
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'

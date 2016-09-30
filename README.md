@@ -12,10 +12,10 @@ Android Studio 2.2
 Gradle 2.14.1
 compileSdkVersion 24
 minSdkVersion 17
-buildToolsVersion "24.0.2"
+buildToolsVersion "24.0.3"
 
 
 Wifi Mac Change for Android can be found at https://github.com/asm301/Wifi_Mac_Change
 RootShell and RootTools belong to someone else https://github.com/Stericson
 You can find the latest release here: https://github.com/Stericson/RootShell/releases
-You can find more information at our wiki: https://github.com/Stericson/RootShell/wiki
+You can find more information here: https://github.com/Stericson/RootShell/wiki
