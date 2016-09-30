@@ -9,12 +9,9 @@ PATH=$STUDIO_JDK/bin:$GRADLE_HOME/bin:$PATH
 
 cd $HOME/Android/StudioProjects/Wifi_Mac_Change
 
-rm -rf build
-rm -rf RootShell/build
-rm -rf RootTools/build
-rm -rf wifimacchange/build
+find . -type d -iname "build" -exec rm -rf {} \;
 
-find . -type f -iname "*.apk" -delete
+find . -type f -iname "*.apk" -exec rm -rf {} \;
 
 gradle clean
 
