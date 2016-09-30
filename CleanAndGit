@@ -1,0 +1,26 @@
+#!/bin/bash
+
+STUDIO_JDK=$HOME/Android/android-studio/jre
+JRE_HOME=$STUDIO_JDK
+JDK_HOME=$STUDIO_JDK
+JAVA_HOME=$STUDIO_JDK
+GRADLE_HOME=$HOME/Android/android-studio/gradle/gradle-2.14.1
+PATH=$STUDIO_JDK/bin:$GRADLE_HOME/bin:$PATH
+
+cd $HOME/Android/StudioProjects/Wifi_Mac_Change
+
+rm -rf build
+rm -rf RootShell/build
+rm -rf RootTools/build
+rm -rf wifimacchange/build
+
+find . -type f -iname "*.apk" -delete
+
+gradle clean
+
+rm -rf .gradle
+rm -rf gradle
+
+git add -A -f
+git commit -m "# clean"
+git push origin master
