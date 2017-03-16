@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 STUDIO_JDK=$HOME/Android/android-studio/jre
 JRE_HOME=$STUDIO_JDK
 JDK_HOME=$STUDIO_JDK
 JAVA_HOME=$STUDIO_JDK
-GRADLE_HOME=$HOME/Android/android-studio/gradle/gradle-2.14.1
+GRADLE_HOME=$HOME/Android/android-studio/gradle/gradle-3.2
 PATH=$STUDIO_JDK/bin:$GRADLE_HOME/bin:$PATH
 
 cd $HOME/Android/StudioProjects/Wifi_Mac_Change

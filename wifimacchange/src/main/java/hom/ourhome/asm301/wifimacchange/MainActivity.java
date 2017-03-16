@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity
     // Wifi Switch START
     public void toggleWifi(boolean status) {
         WifiManager wifiManager = (WifiManager) this
-                .getSystemService(Context.WIFI_SERVICE);
+                .getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         if (status == true && !wifiManager.isWifiEnabled()) {
             wifiManager.setWifiEnabled(true);
             makeToast("Wifi Enabled!");
