@@ -11,7 +11,7 @@ android {
     def versionMajor = versionProps['VERSION_MAJOR'].toInteger()
     def versionMinor = versionProps['VERSION_MINOR'].toInteger()
     def versionPatch = versionProps['VERSION_PATCH'].toInteger()
-    def versionBuild = (versionProps['VERSION_CODE'] ?: "0").toInteger() + 1
+    def versionBuild = versionProps['VERSION_CODE'].toInteger() + 1
     versionProps['VERSION_CODE'] = versionBuild.toString()
     versionProps.store(versionPropsFile.newWriter(), null)
     
