@@ -143,7 +143,6 @@
     <orderEntry type="library" exported="" name="support-vector-drawable-25.3.0" level="project" />
     <orderEntry type="module" module-name="RootTools" exported="" />
     <orderEntry type="module" module-name="RootShell" exported="" />
-    <orderEntry type="library" exported="" name="android-android-25" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-core-2.2.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="runner-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="exposed-instrumentation-api-publish-0.5" level="project" />
