@@ -1,1 +1,1 @@
-include ':wifimacchange', ':RootShell', ':RootTools'
+include ':wifimacchange', ':RootShell', ':RootTools', ':macaddresschange'

@@ -22,10 +22,6 @@
 
 package com.stericson.rootshell;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.TimeoutException;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -36,20 +32,21 @@ import android.os.StrictMode;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.stericson.rootshell.RootShell;
 import com.stericson.rootshell.exceptions.RootDeniedException;
 import com.stericson.rootshell.execution.Command;
 import com.stericson.rootshell.execution.Shell;
 
-public class SanityCheckRootShell extends Activity
-{
+import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.TimeoutException;
+
+public class SanityCheckRootShell extends Activity {
     private ScrollView mScrollView;
     private TextView mTextView;
     private ProgressDialog mPDialog;
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
@@ -75,45 +72,31 @@ public class SanityCheckRootShell extends Activity
 
         print("SanityCheckRootShell \n\n");
 
-        if (RootShell.isRootAvailable())
-        {
+        if (RootShell.isRootAvailable()) {
             print("Root found.\n");
-        }
-        else
-        {
+        } else {
             print("Root not found");
         }
 
-        try
-        {
+        try {
             RootShell.getShell(true);
-        }
-        catch (IOException e2)
-        {
+        } catch (IOException e2) {
             // TODO Auto-generated catch block
             e2.printStackTrace();
-        }
-        catch (TimeoutException e)
-        {
+        } catch (TimeoutException e) {
             print("[ TIMEOUT EXCEPTION! ]\n");
             e.printStackTrace();
-        }
-        catch (RootDeniedException e)
-        {
+        } catch (RootDeniedException e) {
             print("[ ROOT DENIED EXCEPTION! ]\n");
             e.printStackTrace();
         }
 
-        try
-        {
-            if (!RootShell.isAccessGiven())
-            {
+        try {
+            if (!RootShell.isAccessGiven()) {
                 print("ERROR: No root access to this device.\n");
                 return;
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             print("ERROR: could not determine root access to this device.\n");
             return;
         }
@@ -126,13 +109,10 @@ public class SanityCheckRootShell extends Activity
         new SanityCheckThread(this, new TestHandler()).start();
     }
 
-    protected void print(CharSequence text)
-    {
+    protected void print(CharSequence text) {
         mTextView.append(text);
-        mScrollView.post(new Runnable()
-        {
-            public void run()
-            {
+        mScrollView.post(new Runnable() {
+            public void run() {
                 mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
             }
         });
@@ -140,17 +120,14 @@ public class SanityCheckRootShell extends Activity
 
     // Run our long-running tests in their separate thread so as to
     // not interfere with proper rendering.
-    private class SanityCheckThread extends Thread
-    {
+    private class SanityCheckThread extends Thread {
         private Handler mHandler;
 
-        public SanityCheckThread(Context context, Handler handler)
-        {
+        public SanityCheckThread(Context context, Handler handler) {
             mHandler = handler;
         }
 
-        public void run()
-        {
+        public void run() {
             visualUpdate(TestHandler.ACTION_SHOW, null);
 
             // First test: Install a binary file for future use
@@ -168,26 +145,21 @@ public class SanityCheckRootShell extends Activity
             visualUpdate(TestHandler.ACTION_PDISPLAY, "Testing getPath");
             visualUpdate(TestHandler.ACTION_DISPLAY, "[ getPath ]\n");
 
-            try
-            {
+            try {
                 List<String> paths = RootShell.getPath();
 
-                for (String path : paths)
-                {
+                for (String path : paths) {
                     visualUpdate(TestHandler.ACTION_DISPLAY, path + " k\n\n");
                 }
 
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
             visualUpdate(TestHandler.ACTION_PDISPLAY, "Testing A ton of commands");
             visualUpdate(TestHandler.ACTION_DISPLAY, "[ Ton of Commands ]\n");
 
-            for (int i = 0; i < 100; i++)
-            {
+            for (int i = 0; i < 100; i++) {
                 RootShell.exists("/system/xbin/busybox");
             }
 
@@ -215,95 +187,76 @@ public class SanityCheckRootShell extends Activity
             visualUpdate(TestHandler.ACTION_PDISPLAY, "Testing output capture");
             visualUpdate(TestHandler.ACTION_DISPLAY, "[ busybox ash --help ]\n");
 
-            try
-            {
+            try {
                 shell = RootShell.getShell(true);
                 Command cmd = new Command(
                         0,
-                        "busybox ash --help")
-                {
+                        "busybox ash --help") {
 
                     @Override
-                    public void commandOutput(int id, String line)
-                    {
+                    public void commandOutput(int id, String line) {
                         visualUpdate(TestHandler.ACTION_DISPLAY, line + "\n");
                         //super.commandOutput(id, line);
                     }
                 };
                 shell.add(cmd);
 
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
             visualUpdate(TestHandler.ACTION_PDISPLAY, "Switching RootContext - SYSTEM_APP");
             visualUpdate(TestHandler.ACTION_DISPLAY, "[ Switching Root Context - SYSTEM_APP ]\n");
 
-            try
-            {
+            try {
                 shell = RootShell.getShell(true, Shell.ShellContext.SYSTEM_APP);
                 Command cmd = new Command(
                         0,
-                        "id")
-                {
+                        "id") {
 
                     @Override
-                    public void commandOutput(int id, String line)
-                    {
+                    public void commandOutput(int id, String line) {
                         visualUpdate(TestHandler.ACTION_DISPLAY, line + "\n");
                         super.commandOutput(id, line);
                     }
                 };
                 shell.add(cmd);
 
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
             visualUpdate(TestHandler.ACTION_PDISPLAY, "Switching RootContext - UNTRUSTED");
             visualUpdate(TestHandler.ACTION_DISPLAY, "[ Switching Root Context - UNTRUSTED ]\n");
 
-            try
-            {
+            try {
                 shell = RootShell.getShell(true, Shell.ShellContext.UNTRUSTED_APP);
                 Command cmd = new Command(
                         0,
-                        "id")
-                {
+                        "id") {
 
                     @Override
-                    public void commandOutput(int id, String line)
-                    {
+                    public void commandOutput(int id, String line) {
                         visualUpdate(TestHandler.ACTION_DISPLAY, line + "\n");
                         super.commandOutput(id, line);
                     }
                 };
                 shell.add(cmd);
 
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            try
-            {
+            try {
                 shell = RootShell.getShell(true);
 
-                Command cmd = new Command(42, false, "echo done")
-                {
+                Command cmd = new Command(42, false, "echo done") {
 
                     boolean _catch = false;
 
                     @Override
-                    public void commandOutput(int id, String line)
-                    {
-                        if (_catch)
-                        {
+                    public void commandOutput(int id, String line) {
+                        if (_catch) {
                             RootShell.log("CAUGHT!!!");
                         }
 
@@ -312,21 +265,16 @@ public class SanityCheckRootShell extends Activity
                     }
 
                     @Override
-                    public void commandTerminated(int id, String reason)
-                    {
-                        synchronized (SanityCheckRootShell.this)
-                        {
+                    public void commandTerminated(int id, String reason) {
+                        synchronized (SanityCheckRootShell.this) {
 
                             _catch = true;
                             visualUpdate(TestHandler.ACTION_PDISPLAY, "All tests complete.");
                             visualUpdate(TestHandler.ACTION_HIDE, null);
 
-                            try
-                            {
+                            try {
                                 RootShell.closeAllShells();
-                            }
-                            catch (IOException e)
-                            {
+                            } catch (IOException e) {
                                 // TODO Auto-generated catch block
                                 e.printStackTrace();
                             }
@@ -335,21 +283,16 @@ public class SanityCheckRootShell extends Activity
                     }
 
                     @Override
-                    public void commandCompleted(int id, int exitCode)
-                    {
-                        synchronized (SanityCheckRootShell.this)
-                        {
+                    public void commandCompleted(int id, int exitCode) {
+                        synchronized (SanityCheckRootShell.this) {
                             _catch = true;
 
                             visualUpdate(TestHandler.ACTION_PDISPLAY, "All tests complete.");
                             visualUpdate(TestHandler.ACTION_HIDE, null);
 
-                            try
-                            {
+                            try {
                                 RootShell.closeAllShells();
-                            }
-                            catch (IOException e)
-                            {
+                            } catch (IOException e) {
                                 // TODO Auto-generated catch block
                                 e.printStackTrace();
                             }
@@ -360,16 +303,13 @@ public class SanityCheckRootShell extends Activity
 
                 shell.add(cmd);
 
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }
 
-        private void visualUpdate(int action, String text)
-        {
+        private void visualUpdate(int action, String text) {
             Message msg = mHandler.obtainMessage();
             Bundle bundle = new Bundle();
             bundle.putInt(TestHandler.ACTION, action);
@@ -379,8 +319,7 @@ public class SanityCheckRootShell extends Activity
         }
     }
 
-    private class TestHandler extends Handler
-    {
+    private class TestHandler extends Handler {
         static final public String ACTION = "action";
         static final public int ACTION_SHOW = 0x01;
         static final public int ACTION_HIDE = 0x02;
@@ -388,20 +327,19 @@ public class SanityCheckRootShell extends Activity
         static final public int ACTION_PDISPLAY = 0x04;
         static final public String TEXT = "text";
 
-        public void handleMessage(Message msg)
-        {
+        public void handleMessage(Message msg) {
             int action = msg.getData().getInt(ACTION);
             String text = msg.getData().getString(TEXT);
 
-            switch (action)
-            {
+            switch (action) {
                 case ACTION_SHOW:
                     mPDialog.show();
                     mPDialog.setMessage("Running Root Library Tests...");
                     break;
                 case ACTION_HIDE:
-                    if (null != text)
-                    { print(text); }
+                    if (null != text) {
+                        print(text);
+                    }
                     mPDialog.hide();
                     break;
                 case ACTION_DISPLAY:

@@ -29,10 +29,6 @@ public class RootClass /* #ANNOTATIONS extends AbstractProcessor */ {
 
     static String PATH_TO_DX = "/Users/Chris/Projects/android-sdk-macosx/build-tools/18.0.1/dx";
 
-    enum READ_STATE {
-        STARTING, FOUND_ANNOTATION;
-    }
-
     public RootClass(String[] args) throws ClassNotFoundException, NoSuchMethodException,
             IllegalAccessException, InvocationTargetException, InstantiationException {
 
@@ -50,22 +46,33 @@ public class RootClass /* #ANNOTATIONS extends AbstractProcessor */ {
         classConstructor.newInstance(actualArgs);
     }
 
-    public @interface Candidate {
-
-    }
-
-    ;
-
-    public class RootArgs {
-
-        public String args[];
-    }
-
     static void displayError(Exception e) {
         // Not using system.err to make it easier to capture from
         // calling library.
         System.out.println("##ERR##" + e.getMessage() + "##");
         e.printStackTrace();
+    }
+
+    public static void main(String[] args) {
+        try {
+            if (args.length == 0) {
+                new AnnotationsFinder();
+            } else {
+                new RootClass(args);
+            }
+        } catch (Exception e) {
+            displayError(e);
+        }
+    }
+
+    ;
+
+    enum READ_STATE {
+        STARTING, FOUND_ANNOTATION;
+    }
+
+    public @interface Candidate {
+
     }
 
     // I reckon it would be better to investigate classes using getAttribute()
@@ -149,8 +156,8 @@ public class RootClass /* #ANNOTATIONS extends AbstractProcessor */ {
                 }
 
                 String strRawFolder = "res" + File.separator + "raw";
-                if (builtPath.toString().startsWith("build")); //Check if running in AndroidStudio
-                    strRawFolder = "src" + File.separator + "main" + File.separator + "res" + File.separator + "raw";
+                if (builtPath.toString().startsWith("build")) ; //Check if running in AndroidStudio
+                strRawFolder = "src" + File.separator + "main" + File.separator + "res" + File.separator + "raw";
 
                 File rawFolder = new File(strRawFolder);
                 if (!rawFolder.exists()) {
@@ -334,15 +341,8 @@ public class RootClass /* #ANNOTATIONS extends AbstractProcessor */ {
 
     }
 
-    public static void main(String[] args) {
-        try {
-            if (args.length == 0) {
-                new AnnotationsFinder();
-            } else {
-                new RootClass(args);
-            }
-        } catch (Exception e) {
-            displayError(e);
-        }
+    public class RootArgs {
+
+        public String args[];
     }
 }

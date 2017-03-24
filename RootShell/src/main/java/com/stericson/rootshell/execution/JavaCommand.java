@@ -2,12 +2,11 @@ package com.stericson.rootshell.execution;
 
 import android.content.Context;
 
-public class JavaCommand extends Command
-{
+public class JavaCommand extends Command {
     /**
      * Constructor for executing Java commands rather than binaries
      *
-     * @param context     needed to execute java command.
+     * @param context needed to execute java command.
      */
     public JavaCommand(int id, Context context, String... command) {
         super(id, command);
@@ -18,7 +17,7 @@ public class JavaCommand extends Command
     /**
      * Constructor for executing Java commands rather than binaries
      *
-     * @param context     needed to execute java command.
+     * @param context needed to execute java command.
      */
     public JavaCommand(int id, boolean handlerEnabled, Context context, String... command) {
         super(id, handlerEnabled, command);
@@ -29,7 +28,7 @@ public class JavaCommand extends Command
     /**
      * Constructor for executing Java commands rather than binaries
      *
-     * @param context     needed to execute java command.
+     * @param context needed to execute java command.
      */
     public JavaCommand(int id, int timeout, Context context, String... command) {
         super(id, timeout, command);
@@ -39,20 +38,17 @@ public class JavaCommand extends Command
 
 
     @Override
-    public void commandOutput(int id, String line)
-    {
+    public void commandOutput(int id, String line) {
         super.commandOutput(id, line);
     }
 
     @Override
-    public void commandTerminated(int id, String reason)
-    {
+    public void commandTerminated(int id, String reason) {
         // pass
     }
 
     @Override
-    public void commandCompleted(int id, int exitCode)
-    {
+    public void commandCompleted(int id, int exitCode) {
         // pass
     }
 }

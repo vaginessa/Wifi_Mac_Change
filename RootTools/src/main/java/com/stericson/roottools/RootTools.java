@@ -27,7 +27,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.stericson.roottools.Constants;
 import com.stericson.rootshell.RootShell;
 import com.stericson.rootshell.exceptions.RootDeniedException;
 import com.stericson.rootshell.execution.Command;
@@ -47,6 +46,26 @@ import java.util.concurrent.TimeoutException;
 
 public final class RootTools {
 
+    public static boolean debugMode = false;
+    public static String utilPath;
+    /**
+     * Setting this to false will disable the handler that is used
+     * by default for the 3 callback methods for Command.
+     * <p/>
+     * By disabling this all callbacks will be called from a thread other than
+     * the main UI thread.
+     */
+    public static boolean handlerEnabled = true;
+
+    // --------------------
+    // # Public Variables #
+    // --------------------
+    /**
+     * Setting this will change the default command timeout.
+     * <p/>
+     * The default is 20000ms
+     */
+    public static int default_Command_Timeout = 20000;
     /**
      * This class is the gateway to every functionality within the RootTools library.The developer
      * should only have access to this class and this class only.This means that this class should
@@ -74,30 +93,6 @@ public final class RootTools {
             return rim;
         }
     }
-
-    // --------------------
-    // # Public Variables #
-    // --------------------
-
-    public static boolean debugMode = false;
-    public static String utilPath;
-
-    /**
-     * Setting this to false will disable the handler that is used
-     * by default for the 3 callback methods for Command.
-     * <p/>
-     * By disabling this all callbacks will be called from a thread other than
-     * the main UI thread.
-     */
-    public static boolean handlerEnabled = true;
-
-
-    /**
-     * Setting this will change the default command timeout.
-     * <p/>
-     * The default is 20000ms
-     */
-    public static int default_Command_Timeout = 20000;
 
 
     // ---------------------------
@@ -563,6 +558,7 @@ public final class RootTools {
     public static boolean isAppletAvailable(String applet) {
         return RootTools.isAppletAvailable(applet, "");
     }
+
     /**
      * @return <code>true</code> if your app has been given root access.
      * @throws TimeoutException if this operation times out. (cannot determine if access is given)
@@ -576,7 +572,6 @@ public final class RootTools {
      *
      * @param timeout The timeout
      * @param retries The number of retries
-     *
      * @return <code>true</code> if your app has been given root access.
      * @throws TimeoutException if this operation times out. (cannot determine if access is given)
      */

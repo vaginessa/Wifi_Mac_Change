@@ -43,10 +43,8 @@ public class RootShell {
     // # Public Variables #
     // --------------------
 
-    public static boolean debugMode = false;
-
     public static final String version = "RootShell v1.3";
-
+    public static boolean debugMode = false;
     /**
      * Setting this to false will disable the handler that is used
      * by default for the 3 callback methods for Command.
@@ -64,22 +62,15 @@ public class RootShell {
      */
     public static int defaultCommandTimeout = 20000;
 
-    public static enum LogLevel {
-        VERBOSE,
-        ERROR,
-        DEBUG,
-        WARN
-    }
-    // --------------------
-    // # Public Methods #
-    // --------------------
-
     /**
      * This will close all open shells.
      */
     public static void closeAllShells() throws IOException {
         Shell.closeAll();
     }
+    // --------------------
+    // # Public Methods #
+    // --------------------
 
     /**
      * This will close the custom shell that you opened.
@@ -354,7 +345,6 @@ public class RootShell {
      *
      * @param timeout The timeout
      * @param retries The number of retries
-     *
      * @return <code>true</code> if your app has been given root access.
      * @throws TimeoutException if this operation times out. (cannot determine if access is given)
      */
@@ -523,10 +513,6 @@ public class RootShell {
         }
     }
 
-    // --------------------
-    // # Public Methods #
-    // --------------------
-
     private static void commandWait(Shell shell, Command cmd) throws Exception {
         while (!cmd.isFinished()) {
 
@@ -563,5 +549,16 @@ public class RootShell {
             }
 
         }
+    }
+
+    // --------------------
+    // # Public Methods #
+    // --------------------
+
+    public static enum LogLevel {
+        VERBOSE,
+        ERROR,
+        DEBUG,
+        WARN
     }
 }

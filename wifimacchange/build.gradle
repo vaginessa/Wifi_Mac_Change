@@ -14,7 +14,7 @@ android {
     def versionBuild = versionProps['VERSION_CODE'].toInteger() + 1
     versionProps['VERSION_CODE'] = versionBuild.toString()
     versionProps.store(versionPropsFile.newWriter(), null)
-    
+
     def versionNameLong = versionMajor + "." + versionMinor + "." + versionPatch + "." + versionBuild;
 
     defaultConfig {

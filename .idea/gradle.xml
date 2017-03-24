@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/RootShell" />
             <option value="$PROJECT_DIR$/RootTools" />
+            <option value="$PROJECT_DIR$/macaddresschange" />
             <option value="$PROJECT_DIR$/wifimacchange" />
           </set>
         </option>

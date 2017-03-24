@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/RootShell/RootShell.iml" filepath="$PROJECT_DIR$/RootShell/RootShell.iml" />
       <module fileurl="file://$PROJECT_DIR$/RootTools/RootTools.iml" filepath="$PROJECT_DIR$/RootTools/RootTools.iml" />
       <module fileurl="file://$PROJECT_DIR$/Wifi_Mac_Change.iml" filepath="$PROJECT_DIR$/Wifi_Mac_Change.iml" />
+      <module fileurl="file://$PROJECT_DIR$/macaddresschange/macaddresschange.iml" filepath="$PROJECT_DIR$/macaddresschange/macaddresschange.iml" />
       <module fileurl="file://$PROJECT_DIR$/wifimacchange/wifimacchange.iml" filepath="$PROJECT_DIR$/wifimacchange/wifimacchange.iml" />
     </modules>
   </component>

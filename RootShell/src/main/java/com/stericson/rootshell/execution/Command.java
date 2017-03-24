@@ -35,14 +35,11 @@ import java.io.IOException;
 
 public class Command {
 
+    public int totalOutput = 0;
+    public int totalOutputProcessed = 0;
     //directly modified by JavaCommand
     protected boolean javaCommand = false;
     protected Context context = null;
-
-    public int totalOutput = 0;
-
-    public int totalOutputProcessed = 0;
-
     ExecutionMonitor executionMonitor = null;
 
     Handler mHandler = null;
@@ -153,8 +150,7 @@ public class Command {
         }
     }
 
-    public final void finish()
-    {
+    public final void finish() {
         RootShell.log("Command finished at users request!");
         commandFinished();
     }
@@ -169,7 +165,7 @@ public class Command {
     public final String getCommand() {
         StringBuilder sb = new StringBuilder();
 
-        if(javaCommand) {
+        if (javaCommand) {
             String filePath = context.getFilesDir().getPath();
             for (int i = 0; i < command.length; i++) {
                 /*
@@ -193,8 +189,7 @@ public class Command {
 
                 sb.append('\n');
             }
-        }
-        else {
+        } else {
             for (int i = 0; i < command.length; i++) {
                 sb.append(command[i]);
                 sb.append('\n');
@@ -232,8 +227,7 @@ public class Command {
         executing = true;
     }
 
-    public final void terminate()
-    {
+    public final void terminate() {
         RootShell.log("Terminating command at users request!");
         terminated("Terminated at users request!");
     }
@@ -283,8 +277,7 @@ public class Command {
         }
     }
 
-    public final void resetCommand()
-    {
+    public final void resetCommand() {
         this.finished = false;
         this.totalOutput = 0;
         this.totalOutputProcessed = 0;
@@ -297,8 +290,7 @@ public class Command {
 
         public void run() {
 
-            if(timeout > 0)
-            {
+            if (timeout > 0) {
                 //We need to kill the command after the given timeout
                 while (!finished) {
 
