@@ -3,21 +3,54 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+    def Properties versionProps = new Properties()
+    def versionPropsFile = file('version.properties')
+    if (versionPropsFile.exists())
+        versionProps.load(new FileInputStream(versionPropsFile))
+    def VersionMajor = versionProps['VERSION_MAJOR'].toInteger()
+    def VersionMinor = versionProps['VERSION_MINOR'].toInteger()
+    def VersionPatch = versionProps['VERSION_PATCH'].toInteger()
+    def VersionCode = versionProps['VERSION_CODE'].toInteger() + 1
+    versionProps['VERSION_CODE'] = VersionCode.toString()
+    versionProps.store(versionPropsFile.newWriter(), null)
+    def VersionName = VersionMajor + "." + VersionMinor + "." + VersionPatch
 
     defaultConfig {
         applicationId "hom.ourhome.macaddresschange"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode VersionCode
+        versionName VersionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
     buildTypes {
         release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            zipAlignEnabled true
+        }
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+            jniDebuggable true
+            renderscriptDebuggable true
+            zipAlignEnabled false
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def OrigApkName = project.name + "-" + variant.buildType.name + ".apk"
+            def NewApkName = "Mac Address Change" + "-" + defaultConfig.versionName + ".apk"
+            output.outputFile = new File(
+                    output.outputFile.parent, output.outputFile.name.replace(
+                    OrigApkName,
+                    NewApkName))
         }
     }
 }
