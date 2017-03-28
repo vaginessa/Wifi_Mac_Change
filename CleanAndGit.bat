@@ -10,6 +10,7 @@ cd %HOMEPATH%\Downloads\asm301\AndroidStudioProjects\Wifi_Mac_Change
 
 del /Q *.apk
 rmdir /S /Q build
+rmdir /S /Q .gradle
 rmdir /S /Q RootShell\build
 rmdir /S /Q RootTools\build
 rmdir /S /Q wifimacchange\build
@@ -18,6 +19,7 @@ rmdir /S /Q macaddresschange\build
 gradle clean
 
 del /Q *.apk
+rmdir /S /Q .gradle
 rmdir /S /Q build
 rmdir /S /Q RootShell\build
 rmdir /S /Q RootTools\build
