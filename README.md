@@ -1,5 +1,9 @@
 # Wifi_Mac_Change
+# Mac Address Change
+
 Wifi Mac Change for Android
+and
+Mac Address Change for Android
 
 I made this so I could change my wifi mac address.
 This works on Galaxy Avant and Galaxy Light with "Chainfire SuperSU" and "Stericson Busybox, RootShell, RootTools".
