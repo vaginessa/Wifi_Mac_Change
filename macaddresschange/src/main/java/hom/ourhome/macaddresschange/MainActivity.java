@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                exitApp();
                 Snackbar.make(view, "Replace fab2 with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -115,5 +116,11 @@ public class MainActivity extends AppCompatActivity {
         String version = "Version: " + pInfo.versionName + "." + pInfo.versionCode;
         TextView versionText = (TextView) findViewById(R.id.versionName);
         versionText.setText(version);
+    }
+
+    public void exitApp() {
+        android.os.Process.killProcess(android.os.Process.myPid());
+        finish();
+        System.exit(0);
     }
 }
