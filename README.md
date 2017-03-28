@@ -9,7 +9,7 @@ If you paid for this Source Code or Application get a refund because you didn't 
 asm301
 
 Android Studio 2.3
-Gradle 3.3
+Gradle 3.4.1
 compileSdkVersion 25
 minSdkVersion 17
 buildToolsVersion "25.0.2"

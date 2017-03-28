@@ -2,7 +2,7 @@ set STUDIO_JDK="C:\Program Files\Android\Android Studio\jre"
 set JRE_HOME=%STUDIO_JDK%
 set JDK_HOME=%STUDIO_JDK%
 set JAVA_HOME=%STUDIO_JDK%
-set GRADLE_HOME=C:\Program Files\Android\Android Studio\gradle\gradle-3.3
+set GRADLE_HOME=C:\Program Files\Android\Android Studio\gradle\gradle-3.4.1
 set GIT_HOME=%HOMEPATH%\Downloads\asm301\Git
 set PATH=%STUDIO_JDK%\bin;%GRADLE_HOME%\bin;%GIT_HOME%\bin
 
