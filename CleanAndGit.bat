@@ -26,9 +26,6 @@ rmdir /S /Q RootTools\build
 rmdir /S /Q wifimacchange\build
 rmdir /S /Q macaddresschange\build
 
-rmdir /S /Q .gradle
-rmdir /S /Q gradle
-
 git add -A -f
 git commit -m "# clean"
 git push origin master
