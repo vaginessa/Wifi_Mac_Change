@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 "echo 00:${WIFI_MAC} > /efs/wifi/.mac.info",
                 "echo Reconfigureing the wlan0 adapter: DONE",
                 "echo New Wifi mac address is 00:${WIFI_MAC}",
-                "busybox ifconfig wlan0 hw ether 0:${WIFI_MAC}",
+                "busybox ifconfig wlan0 hw ether 00:${WIFI_MAC}",
                 "busybox ifconfig wlan0 up",
                 "echo Starting the wlan0 adapter: DONE"
         );
