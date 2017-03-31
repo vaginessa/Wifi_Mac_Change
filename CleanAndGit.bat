@@ -16,7 +16,7 @@ rmdir /S /Q RootTools\build
 rmdir /S /Q wifimacchange\build
 rmdir /S /Q macaddresschange\build
 
-start gradle clean
+gradle clean
 
 del /Q *.apk
 rmdir /S /Q .gradle
